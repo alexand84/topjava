@@ -39,7 +39,7 @@ public class UserMealsUtil {
                 .map(meal -> new UserMealWithExceed(meal.getDateTime(),
                         meal.getDescription(),
                         meal.getCalories(),
-                        caloriesPerDate.get(meal.getDateTime().toLocalDate()) <= caloriesPerDay))
+                        caloriesPerDate.get(meal.getDateTime().toLocalDate()) > caloriesPerDay))
                 .collect(toList());
     }
 
@@ -57,7 +57,7 @@ public class UserMealsUtil {
                 result.add(new UserMealWithExceed(meal.getDateTime(),
                         meal.getDescription(),
                         meal.getCalories(),
-                        caloriesPerDate.get(meal.getDateTime().toLocalDate()) <= caloriesPerDay));
+                        caloriesPerDate.get(meal.getDateTime().toLocalDate()) > caloriesPerDay));
             }
         }
 
